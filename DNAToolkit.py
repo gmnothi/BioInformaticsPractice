@@ -1,6 +1,7 @@
 # DNA Toolkit File
+import collections
+from sequences import *
 
-Nucleotides = ["A", "C", "G","T"]
 
 def validateSeq(dna_seq):
     tmpseq = dna_seq.upper()
@@ -14,3 +15,9 @@ def countNuqFreq(seq):
     for nuq in seq:
         tmpFreqDict[nuq] += 1
     return tmpFreqDict
+
+def transcription(seq):
+    return seq.replace("T", "U")
+
+def reverse_complement(seq):
+    return ''.join([DNA_ReverseComp[nuc] for nuc in seq])[::-1]
